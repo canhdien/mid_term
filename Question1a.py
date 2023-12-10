@@ -45,4 +45,3 @@ plt.title("Question 1a")
 
 # Show the plot
 plt.show()
-plt.grid()
