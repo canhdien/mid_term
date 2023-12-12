@@ -8,10 +8,11 @@ input = 45 # Use for A
 x,A= sp.symbols('x,A')# This part for finding the equation of tangent line
 f = x**2 -(2*A)*x - A**2
 def fm(x,A):
-    return  x**2 -(2*A)*x - A**2
+    return  x**2 -(2*A)*x  - A**2
 df = sp.diff(f,x)
 df1 = df.subs(A,input)
 slope = df1.subs(x,0)
+print(slope)
 y_tangentLine = slope * (x) - (input **2)
 def yline(x):
     return slope * (x) - (input **2)
@@ -26,11 +27,10 @@ finter= fm(x,input)
 
 
 #find the intersaction 
-# -30x -225 = x^2 -30*x-225
 #intersaction = 0
 
 def calculateIntersactionOnY(x):
-    return -30*x-225
+    return slope*x-input
 def f_shifted(x,A):
     return x**2 -(2*A)*x - A**2- 4*A**3
 f4unit= f_shifted(x,input)
@@ -48,8 +48,9 @@ root_4 = f_shifted(root_2,input)
 
 # intersaction1 = 0
 # intersaction2 = -225
-equation1= -30*x-225
-equation2 = x**2 -30*x-225 
+equation1= slope*x-input**2
+equation2 = x**2 -2*input*x-input**2 
+print(equation1)
 # Set the equations equal to each other
 equation = Eq(equation1, equation2)
 
@@ -62,8 +63,8 @@ print(solution)
 
 
 print("Equation of the tangent line to the curve f(x) : ", y_tangentLine)
-print("Intersection point 1 :", ( root_1, root_3))
-print("Intersaction point 2 : ", (root_2,root_4))
+print(" 1b. Intersection point 1 :", ( root_1, root_3))
+print(" 1b. Intersaction point 2 : ", (root_2,root_4))
 
 
 
